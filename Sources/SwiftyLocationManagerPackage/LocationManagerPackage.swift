@@ -36,6 +36,10 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
         
         return region
     }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
+    }
 
     public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         isInsideGeofence = true
